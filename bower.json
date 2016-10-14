@@ -1,0 +1,23 @@
+{
+  "name": "landing",
+  "description": "fist gulp project",
+  "main": "gulpfile.js",
+  "authors": [
+    "andrey"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/AndreyVolochnyuk/jambler",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "slick": "*",
+    "normalize-strings": "normalize#^1.1.0"
+  }
+}

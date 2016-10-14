@@ -1,4 +1,6 @@
 @import "_normalize";
+@import "_slick";
+
 
 
 body{
@@ -45,7 +47,7 @@ body{
 .mobi-nav__menu{
 	 position: absolute;
 	 left: 0;
-	 top: 58px;
+	 top: 33px;
 	 display: none;
 	 width: 100%;
 	 border-top: 2px solid #000;
@@ -254,7 +256,267 @@ body{
 
 /*---------------section slider-------------------------*/
 .slider{
-	display: none;
+	width: auto;
+	margin: 0 auto;
+	background: #fff;
+	padding: 0 0 30px 0;
+	overflow: hidden;
+	&__title{
+		padding: 40px 20px 0 20px;
+		background: #f0f0f0;
+	}
+	&__container{
+		background: #f0f0f0;
+		position:relative;
+		height: 350px;
+		.slick-arrow{
+			position: absolute;
+			bottom: -20px;
+			border: none;
+			background: none;
+			text-indent: -9999999999px;
+			outline: none;
+			height: 17px;
+			width: 10px;
+			padding: 0;
+		}
+
+		.slick-prev{
+			content:"";
+			background: url('../img/prev-arrow.png') no-repeat;
+			left: 15px;
+		}
+
+		.slick-next{
+			content:"";
+			background: url('../img/next-arrow.png') no-repeat;
+			right: 15px;
+			z-index: 4;
+		}
+		.slick-dots{
+			display: flex;
+			position: absolute;
+			left: 50%;
+			bottom: -17px;
+			transform: translateX(-50%);
+			li{
+				background: none;
+				margin: 0 8px 0 0;
+				button{
+					text-indent: -99999999999px;
+					background: #000;
+					border-radius: 50%;
+					width: 8px;
+					height: 8px;
+					border: 2px solid #000;
+					padding: 0;
+					display:block;
+				}
+			}
+			.slick-active{
+				button{
+					background: #fff;
+					outline: none;
+				}
+
+			}
+		}
+
+		.swiper-slide{
+			height: 350px;
+			display: flex;
+			align-items: flex-end;
+			position: relative;
+			.slide-img{
+				z-index: 5;
+				img{
+					height: auto;
+				}
+			}
+			.slide-text{
+					position:absolute;
+					z-index: 3;
+					p{
+						font-size: .625em;
+						line-height: 18px;
+						color: #fff;
+						background: #0d221b;
+						border-radius: 3px;
+						box-sizing: border-box;
+						width: 160px;
+						height: 120px;
+						padding: 15px 20px 15px 15px;
+						position: relative;
+						&:before{
+							content: "";
+							position: absolute;
+							bottom: 10px;
+							right: 10px;
+						}
+					}
+			}
+			&.first{
+				overflow: hidden;
+				.slide-img{
+					img{
+						width: 60%;
+						transform: translateX(-25px);
+					}
+				}
+				.slide-text{
+					top: 60px;
+					right: 20px;
+					p:before{
+						background: url('../img/freekick.png') no-repeat;
+						width: 21px;
+						height: 21px;
+					}
+				}
+			}
+			&.second{
+				.slide-img{
+					img{
+						width: 70%;
+					}
+				}
+				.slide-text{
+					top: 40px;
+					right: 20px;
+					p:before{
+						background: url('../img/boy.png') no-repeat;
+						width: 20px;
+						height: 20px;
+					}
+				}
+
+			}
+			&.third{
+				.slide-img{
+					width: 100%;
+					display: flex;
+					justify-content:flex-end;
+					align-items: flex-end;
+					img{
+						width: 55%;
+					}
+				}
+				.slide-text{
+					bottom: 15px;
+					left: 10px;
+					p:before{
+						background: url('../img/red-card.png') no-repeat;
+						width: 12px;
+						height: 16px;
+					}
+				}
+			}
+			&.four{
+				.slide-img{
+					img{
+						width: 65%;
+					}
+				}
+				.slide-text{
+					top: 10px;
+					right: 30px;
+					p{
+						height: 140px;
+						&:before{
+							background: url('../img/corner.png') no-repeat;
+							width: 20px;
+							height: 20px;
+						}
+					}
+				}
+			}
+			&.five{
+				.slide-img{
+					width: 100%;
+					display: flex;
+					justify-content:flex-end;
+					align-items: flex-end;
+					img{
+						width: 70%;
+					}
+				}
+				.slide-text{
+					top: 20px;
+					left: 10px;
+					p:before{
+						background: url('../img/offside.png') no-repeat;
+						width: 14px;
+						height: 20px;
+					}
+				}
+			}
+			&.six{
+				.slide-img{
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					img{
+						width: 60%;
+					}
+				}
+				.left{
+					bottom: 180px;
+					left: 10px;
+					p{
+						height: 140px;
+						width: 140px;
+						&:before{
+							background: url('../img/goal.png') no-repeat;
+							width: 20px;
+							height: 18px;
+						}
+					}
+				}
+				.right{
+					top: 15px;
+					right: 5px;
+					p{
+						height: 140px;
+						width: 140px;
+						&:before{
+							background: url('../img/goal-kick.png') no-repeat;
+							width: 33px;
+							height: 20px;
+						}
+					}
+				}
+			}
+			&.seven{
+				.slide-img{
+					width: 100%;
+					display: flex;
+					justify-content:flex-end;
+					align-items: flex-end;
+					img{
+						width: 80%;
+					}
+				}
+				.slide-text{
+					top: 15px;
+					left: 40px;
+					p:before{
+						background: url('../img/penalty.png') no-repeat;
+						width: 21px;
+						height: 18px;
+					}
+				}
+			}
+			&.eight{
+				align-items: center;
+				p{
+					padding: 19px 20px 0 20px;
+					&:before{
+						left: 20px;
+					}
+				}
+			}
+		}
+	}
 }
 
 /*-----------section mmet-friends----------------*/
@@ -264,7 +526,7 @@ body{
 	padding: 0 20px;
 	background: #fff;
 	&__title{
-			margin: 0 0 60px 0;
+			margin: 80px 0 60px 0;
 		}
 	&__button{
 			display: block;
@@ -277,6 +539,9 @@ body{
 			border-radius: 3px;
 			padding: 25px 0;
 			margin: 0 0 40px 0;
+			&:last-child{
+				margin: 0 0 0 0;
+			}
 			&:hover, &:focus{
 				opacity: .4;
 			}
@@ -304,6 +569,66 @@ body{
 			background: #5c82ab;
 		}
 }
+
+/*-----------section tournament----------------*/
+.tournament{
+	width: auto;
+	margin: 0 auto;
+	background: #fff;
+	padding: 80px 0 0 0;
+	&__title{
+		padding: 0 20px 67px 20px;
+	}
+	&__table__row{
+		display: flex;
+		padding: 12px 10px 14px 10px;
+		border-top: 1px solid #e6e6e6;
+		&:nth-child(6), &:nth-child(7), &:nth-child(8) {
+			display: none;
+		}
+		.tournament__logo{
+			padding: 3px 10px 0 0;
+			img{
+				display:block;
+			}
+		}
+		.tournament__info{
+			display: flex;
+			flex-wrap: wrap;
+			line-height: 14px;
+			&_title{
+				flex-basis: 95%;
+				font-size: .75em;
+				color: #2c715b;
+				margin: 0 0 11px 0;
+			}
+			&_characteristics{
+				display: flex;
+				flex-basis: 100%;
+				justify-content: space-between;
+				align-items: center;
+				font-size: .625em;
+				color: #999999;
+				span{
+					font-size: 1.2em;
+					color: #000000;
+					font-weight: 700;
+				}
+				span[class=live]{
+					color: #c34c4c;
+				}
+				
+				.status, .prize-pool{
+					display: none;
+				}
+			}
+		}
+		.tournament__button{
+			display: none;
+		}
+	}
+}
+
 
 /*-------------section registration-----------------*/
 
@@ -500,7 +825,5 @@ body{
 			}
 		}
 	}
-
-
 
 }
